@@ -118,3 +118,18 @@ def calcular_media_notas():
             print('Valor inválido! Por favor, digite um número real.')
 if __name__ == "__main__":
     calcular_media_notas()
+
+#10. Crie um código que calcule e imprima a média ponderada dos números 5, 12, 20 e 15 com pesos respectivamente iguais a 1, 2, 3 e 4.
+
+import numpy as np
+
+numeros = np.array([5, 12, 20, 15])
+pesos = np.array([1, 2, 3, 4])
+
+# O cálculo deve dar (5*1 + 12*2 + 20*3 + 15 * 4) / (1+2+3+4) = 149 / 10 = 14,9
+media = np.average(numeros, weights=pesos)
+
+print(f"Resultado da Média Ponderada: {media}")
+
+if __name__ == "__main__":
+    pass
