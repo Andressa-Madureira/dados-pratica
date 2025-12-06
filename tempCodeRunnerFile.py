@@ -1,3 +1,5 @@
-#10. Crie um código que solicite uma frase à pessoa usuária e imprima a mesma frase com todas as consoantes “s” trocadas pelo caractere “$”.
-frase = input('Por favor, digite uma frase: ') 
-print(frase.replace('s','$').replace('S', '$'))
+letra = input('Por favor, digite uma letra do alfabeto: ')
+            if (letra == 'a' or letra == 'e') or (letra == 'i' or letra == 'o') or letra == 'u':
+                print(f'Você digitou a letra {letra}. É uma vogal')
+            else:
+                print(f'Você digitou a letra {letra}. É uma letra do alfabeto.')
