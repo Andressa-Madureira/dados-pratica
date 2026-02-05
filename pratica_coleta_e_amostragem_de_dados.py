@@ -41,3 +41,43 @@ segundo_numero = int(input("Por favor, digite o segundo número para a multiplic
 resultado_multi = primeiro_numero * segundo_numero
 print(f'O resultado da multiplicação é: {resultado_multi}')
 
+#5)Crie um programa que solicite dois valores numéricos, um numerador e um denominador, e realize a divisão entre os dois valores. Deixe claro que o valor do denominador não pode ser 0.
+def divisao_valor():
+    while True:
+        try:
+            numerador = int(input("Por favor, digite o numerador: "))
+            denominador = int(input("Por favor, digite o denominador. Atenção: não pode ser o 0: "))
+            resultado_divisao = numerador / denominador
+            print(f'O valor da divisão é: {resultado_divisao}')
+            break
+
+        except ZeroDivisionError:
+            print('Atenção o denominador não pode ser 0. Tente novamente')
+        except ValueError:
+             print('Por favor, você precisa digitar um número inteiro! Tente novamente, por favor.')
+if __name__ == "__main__":
+        divisao_valor()
+
+#6)Crie um programa que solicite dois valores numéricos, um operador e uma potência, e realize a exponenciação entre esses dois valores.
+def potencia():
+     while True:
+          
+          try:
+               operador = int(input('Por favor, digite o operador: '))
+               potencia = int(input('Por favor, digite uma potência'))
+               resultado_potencia = operador ** potencia
+               print(f'O resultado da potência é: {resultado_potencia}')
+               break
+          
+          except ValueError:
+               print('Por favor, digite um número! Informe os valores corretamente')
+
+if __name__ == "__main__":
+     potencia()
+
+#7)Crie um programa que solicite dois valores numéricos, um numerador e um denominador e realize a divisão inteira entre os dois valores. Deixe claro que o valor do denominador não pode ser 0.
+
+def calcular_divisao_inteira():
+     while True:
+          try:
+               numerador

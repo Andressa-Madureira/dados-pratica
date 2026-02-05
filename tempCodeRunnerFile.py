@@ -1,4 +1,15 @@
-primeiro_numero = int(input("Por favor, digite o primeiro número para a multiplicação: "))
-segundo_numero = int(input("Por favor, digite o segundo número para a multiplicação: "))
-resultado_multi = primeiro_numero * segundo_numero
-print(f'O resultado da multiplicação é: {resultado_multi}')
+def potencia():
+     while True:
+          
+          try:
+               operador = int(input('Por favor, digite o operador: '))
+               potencia = int(input('Por favor, digite uma potência'))
+               resultado_potencia = operador ** potencia
+               print(f'O resultado da potência é: {resultado_potencia}')
+               break
+          
+          except ValueError:
+               print('Por favor, digite um número! Informe os valores corretamente')
+
+if __name__ == "__main__":
+     potencia()
