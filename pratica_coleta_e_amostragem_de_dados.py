@@ -95,3 +95,44 @@ if __name__ == "__main__":
 
 
 #8)Crie um programa que solicite dois valores numéricos, um numerador e um denominador, e retorne o resto da divisão entre os dois valores. Deixe claro que o valor do denominador não pode ser 0.
+
+def resto_divisao():
+     while True:
+          try:
+               numerador = int(input("Por favor, digite o numerador: "))
+               denominador = int(input("Por favor, digite o denominador. ATENÇÃO: Não pode ser o 0: "))
+               resultado_resto_divisao = numerador % denominador
+               print(f'O resultado do resto da divisão é {resultado_resto_divisao} ')
+               break
+          except ValueError:
+               print("Valor inválido! Por favor, digite um valor válido. ")
+          except ZeroDivisionError:
+               print("O denominador não pode ser 0. Tente novamente")
+if __name__ == "__main__":
+     resto_divisao()
+
+#9)Crie um código que solicita 3 notas de um estudante e imprima a média das notas.
+
+def media_notas():
+     while True:
+          try:
+               primeira_nota = float(input("Por favor, digite a primeira nota: "))
+               segunda_nota = float(input("Por favor, digite a segunda nota: "))
+               terceira_nota = float(input("Por favor, digite a terceira nota: "))
+               resultado_media = (primeira_nota + segunda_nota + terceira_nota) / 3
+               print(f"A média das 3 notas é : {resultado_media: .2f}")
+               break
+          except ValueError:
+               print("Valor inválido! Por favor, tente novamente!")
+if __name__ == "__main__":
+     media_notas()
+
+#10) Crie um código que calcule e imprima a média ponderada dos números 5, 12, 20 e 15 com pesos respectivamente iguais a 1, 2, 3 e 4.
+
+numeros = [5,12,20,15]
+pesos = [1,2,3,4]
+
+soma_numeros = sum(n * p for n, p in zip(numeros, pesos))
+resultado_pesos = sum(pesos)
+resultado_media_ponderada = soma_numeros/resultado_pesos
+print(f'A média ponderada é: {resultado_media_ponderada: .2f}')
