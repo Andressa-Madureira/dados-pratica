@@ -15,8 +15,6 @@ def exibir_numero_maior():
             break
         except ValueError:
             print('Valor inválido! Por favor, digite um número inteiro.')
-if __name__ == "__main__":
-    exibir_numero_maior()
 
 #2.Escreva um programa que solicite o percentual de crescimento de produção de uma empresa e informe se houve um crescimento (porcentagem positiva) ou decrescimento (porcentagem negativa).
 
@@ -33,8 +31,6 @@ def percentual_empresa():
             break
         except ValueError:
             print('Valor inválido! Por favor, digite um número real')
-if __name__ == "__main__":
-    percentual_empresa()
 
 #Não commitei o terceiro 
 #3. Escreva um programa que determine se uma letra fornecida pela pessoa usuária é uma vogal ou consoante.
@@ -62,54 +58,72 @@ def verificar_alfabeto():
         except Exception as e:
             print(f"\nOcorreu um erro inesperado: {e}\n")
 
-verificar_alfabeto()
-
 #4) Escreva um programa que leia valores médios de preços de um modelo de carro por 3 anos consecutivos e exiba o valor mais alto e mais baixo entre esses três anos.
 
-valores_carros = [85000, 65080, 97300]
-
-maximo = max(valores_carros)
-
-minimo = min(valores_carros)
-
-print(f'O valor máximo é {maximo}')
-print(f'O valor mínimo é {minimo}')
+def calcular_valores_carros():
+    valores_carros = [85000, 65080, 97300]
+    maximo = max(valores_carros)
+    minimo = min(valores_carros)
+    print(f'O valor máximo é {maximo}')
+    print(f'O valor mínimo é {minimo}')
 
 #5) Escreva um programa que pergunte sobre o preço de três produtos e indique qual é o produto mais barato para comprar.
 
-lista_valor = []
-
-valor_agua = float(input('Qual é o valor da água?'))
-valor_guarana = float(input('Qual é o valor do guaraná?'))
-valor_chocolate= float(input('Qual é o valor do chocolate?'))
-
-lista_valor.append(valor_agua)
-lista_valor.append(valor_guarana)
-lista_valor.append(valor_chocolate)
-
-print(lista_valor)
-
-barato = min(lista_valor)
-
-if barato == valor_agua:
-    print(f'O produto mais barato é a água')
-elif barato == valor_chocolate:
-    print(f'O produto mais barato é o chocolate')
-else:
-    print(f'O produto mais barato é o guaraná')
+def calcular_produto_barato():
+    lista_valor = []
+    valor_agua = float(input('Qual é o valor da água?'))
+    valor_guarana = float(input('Qual é o valor do guaraná?'))
+    valor_chocolate= float(input('Qual é o valor do chocolate?'))
+    
+    lista_valor.append(valor_agua)
+    lista_valor.append(valor_guarana)
+    lista_valor.append(valor_chocolate)
+    
+    barato = min(lista_valor)
+    
+    if barato == valor_agua:
+        print(f'O produto mais barato é a água')
+    elif barato == valor_chocolate:
+        print(f'O produto mais barato é o chocolate')
+    else:
+        print(f'O produto mais barato é o guaraná')
 
 #6) Escreva um programa que leia três números e os exiba em ordem decrescente.
 
-ordem_numeros = []
+def ordenar_numeros():
+    ordem_numeros = []
+    num1 = int(input('Digite o primeiro número: '))
+    num2 = int(input('Digite o segundo número: '))
+    num3 = int(input('Digite o terceiro número: '))
+    
+    ordem_numeros.append(num1)
+    ordem_numeros.append(num2)
+    ordem_numeros.append(num3)
+    
+    ordem_numeros.sort(reverse=True)
+    print(ordem_numeros)
+#7)7) Escreva um programa que pergunte em qual turno a pessoa usuária estuda ("manhã", "tarde" ou "noite") e exiba a mensagem "Bom Dia!", "Boa Tarde!", "Boa Noite!", ou "Valor Inválido!", conforme o caso.
+def perguntar_turno():
+    while True:
+        turno = input("Olá, em qual turno você estuda? (manhã, tarde ou noite): ").strip().lower()
+        if turno in ("manhã", "manha"):
+            print("Bom dia!")
+            break
+        elif turno == "tarde":
+            print("Boa tarde!")
+            break
+        elif turno == "noite":
+            print("Boa noite!")
+            break
+        else:
+            print("Turno inválido, tente novamente.")
 
-num1 = int(input('Digite o primeiro número: '))
-num2 = int(input('Digite o segundo número: '))
-num3 = int(input('Digite o terceiro número: '))
-
-ordem_numeros.append(num1)
-ordem_numeros.append(num2)
-ordem_numeros.append(num3)
-
-print(ordem_numeros)
-
-ordem_numeros.sort()
+# Lembrar de descomentar as funções para testar cada uma delas individualmente
+if __name__ == "__main__":
+    # exibir_numero_maior()
+    # percentual_empresa()
+    # verificar_alfabeto()
+    # calcular_valores_carros()
+    # calcular_produto_barato()
+    # ordenar_numeros()
+    perguntar_turno()  
